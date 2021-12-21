@@ -14,10 +14,11 @@
     <section id="Hogwarts_houses_list">
         <ul>
             <?php 
-                $hogwartsHouses = array ("Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin");
-                foreach($hogwartsHouses as $houses){
-                    echo ("<li>".$houses);
-                }
+                $imghh = array('Gryffindor'=>'house-01', 'Hufflepuff'=>'house-02', 'Ravenclaw'=>'house-03', 'Slytherin'=>'house-04');
+
+                    foreach ($imghh as $key => $hhimg) {
+                        echo "<li class='h_houses'><img class='hhimage' src='src/assets/img/hogwarts-houses/$hhimg.png'>$key<br>";
+                    }
             ?>
         </ul>
     </section>
