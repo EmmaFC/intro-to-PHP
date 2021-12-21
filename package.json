@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.0.1"
+  }
+  ,"scripts": {
+    "build": "postcss src/css/styles.css --output dist/css/styles.css"
+  }
+}

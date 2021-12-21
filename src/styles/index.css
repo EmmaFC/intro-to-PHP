@@ -1,0 +1,82 @@
+yk○fn*{
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    list-style: none;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-image: url("../assets/img/bg-hogwarts.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position-x: center;
+    font-family: Jura;
+    margin: auto;
+    width: 100vw;
+    text-align: center;    
+}
+
+#logotype{
+    width: 30vw;
+}
+
+.card_container {
+    width: 25vw;
+    height: 70vh;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card_container img {
+    height: inherit;
+    z-index: -1;
+}
+
+.card_container p {
+    font-size: 2em;
+    z-index: 10;
+    color: white;
+}
+
+table {
+    padding: 2vw;
+}
+
+ul {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+li {
+    width:20vw;
+    height:20vh;
+    overflow:hidden;
+    background-size: contain;
+    display:flex;
+    align-items:center;
+    background-image: URL("/src/assets/img/howgwarts-houses/house-gryphnd.png");
+}
+
+#users_information {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+table *  {
+    background-color: rgba(255, 255, 255, 0.425);
+    padding:1.4vw;
+    width:10vw;
+}
+
+footer {
+    padding:2vw;
+    margin-top: 8vw;
+}
