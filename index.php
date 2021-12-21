@@ -25,18 +25,18 @@
     <section id="new_user_form">
         <form action = "index.php" method = "POST">
             <p>What's your name?</p>
-            <input class="inp_info" name="choose_name" type="text" placeholder="Your Name">
+            <input class="inp_info" name="name" type="text" placeholder="Your Name" require>
             <p>What's your Hogwarts House?</p>
-            <input class="inp_info_2" name="choose_house" type="radio" value="Gryffindor">
+            <input class="inp_info_2" name="house" type="radio" value="Gryffindor" require>
             <label  for="choose_house">Gryffindor</label>
-            <input class="inp_info_2" name="choose_house" type="radio" value="Hufflepuff">
+            <input class="inp_info_2" name="house" type="radio" value="Hufflepuff" require>
             <label  for="choose_house">Hufflepuff</label>
-            <input class="inp_info_2" name="choose_house" type="radio" value="Ravenclaw">
+            <input class="inp_info_2" name="house" type="radio" value="Ravenclaw" require>
             <label  for="choose_house">Ravenclaw</label>
-            <input class="inp_info_2" name="choose_house" type="radio" value="Slytherin">
+            <input class="inp_info_2" name="house" type="radio" value="Slytherin" require>
             <label  for="choose_house">Slytherin</label>
             <p>Do you have any pets?</p>
-            <select  class="inp_info_3" name="choose_pets" id="select_pets">
+            <select  class="inp_info_3" name="pet" id="select_pets" require>
                 <option value="Owl">Owl</option>
                 <option value="Rat">Rat</option>
                 <option value="Cat">Cat</option>
@@ -47,9 +47,11 @@
     </section>
     <section id="users_information">
         <?php
-            $newUser = array ("Name" => $_POST['choose_name'], "House" => $_POST['choose_house'], "Pet" => $_POST['choose_pets']);
+            $newUser = array ("Name" => $_POST['name'], "House" => $_POST['house'], "Pet" => $_POST['pet']);
         ?>
+         <p class="title_table">Your information</p>
         <table id="user_data">
+        
             <tr>
                 <?php 
                     foreach ($_POST as $keyElement => $valueElement) {

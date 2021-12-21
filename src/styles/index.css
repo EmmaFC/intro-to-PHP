@@ -27,11 +27,19 @@ body {
     margin-top: 2%;
 }
 
-form p {
+form p, .title_table {
     font-weight:bold;
     font-size: 1.3em;
     margin-bottom: 1%;
     margin-top: 3.5%;
+    
+}
+
+#users_information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 64vw;
 }
 
 #new_user_form{
@@ -68,6 +76,19 @@ input {
     background-color: #292929;
     opacity: 90%;
     color:white;
+    text-shadow:  1px 2px #292929;
+}
+
+.inp_btn:hover  {
+    background-color: #383838;
+}
+
+.inp_btn:focus  {
+    background-color: #444444;
+}
+
+.inp_btn:active  {
+    background-color: #272727; 
 }
 
 #HP_movie_list{
@@ -94,8 +115,9 @@ input {
     z-index: -1;
 }
 
+
 #ft img {
-    transform: translate(-220px, 0%);
+    transform: translate(-550px, 0%);
 }
 
 #sd img {
