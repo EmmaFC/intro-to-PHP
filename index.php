@@ -104,16 +104,70 @@
             $objMovie07 = new hpMovie ("Harry Potter and the Deathly Hallows Part 1", '2010', "David Yates");
             $objMovie08 = new hpMovie ("Harry Potter and the Deathly Hallows Part 2", '2011', "David Yates");
         ?>
-
-        <div class="card_container">
+        <div id="ft" class="card_container">
             <img class="card_image" src="./src/assets/img/movies/hp-01.jpg" alt=<?php echo $objMovie01->movieTitle()?>>
-            <p class="card_title"><?php echo $objMovie01->movieTitle(); ?></p>
+            <h1 class="card_title"><?php echo $objMovie01->movieTitle(); ?></h1>
             <div class="card_year">
                 <p class="card_director"><?php echo $objMovie01->movieDirector(); ?></p>
                 <p class="card_year"><?php echo $objMovie01->movieYear(); ?></p>
             </div>
         </div>
-
+        <div id="sd" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-02.jpg" alt=<?php echo $objMovie02->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie02->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie02->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie02->movieYear(); ?></p>
+            </div>
+        </div>
+        <div id="tr" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-03.jpeg" alt=<?php echo $objMovie03->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie03->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie03->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie03->movieYear(); ?></p>
+            </div>
+        </div>
+        <div id="fr" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-04.jpg" alt=<?php echo $objMovie04->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie04->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie04->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie04->movieYear(); ?></p>
+            </div>
+        </div>
+        <div id="ft" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-05.jpg" alt=<?php echo $objMovie05->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie05->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie05->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie05->movieYear(); ?></p>
+            </div>
+        </div>
+        <div id="st" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-06.jpg" alt=<?php echo $objMovie06->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie06->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie06->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie06->movieYear(); ?></p>
+            </div>
+        </div>
+        <div id="sv" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-07.jpg" alt=<?php echo $objMovie07->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie07->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie07->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie07->movieYear(); ?></p>
+            </div>
+        </div>    
+        <div id="eg" class="card_container">
+            <img class="card_image" src="./src/assets/img/movies/hp-08.jpg" alt=<?php echo $objMovie08->movieTitle()?>>
+            <h1 class="card_title"><?php echo $objMovie08->movieTitle(); ?></h1>
+            <div class="card_year">
+                <p class="card_director"><?php echo $objMovie08->movieDirector(); ?></p>
+                <p class="card_year"><?php echo $objMovie08->movieYear(); ?></p>
+            </div>
+        </div>
     </section>
     <footer>
         <p>Copyrigth &copy;</p>
