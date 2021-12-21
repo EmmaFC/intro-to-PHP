@@ -56,7 +56,7 @@
                     }  
                 ?>         
             </tr>  
-            <tr>----------------------------------------------------------------------------------------
+            <tr>
                 <?php 
                     foreach ($_POST as $keyElement => $valueElement) {
                         echo "<th>".$valueElement."</th>";    
