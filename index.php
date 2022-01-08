@@ -110,7 +110,7 @@
 
             $objMovie01 = new hpMovie ("./src/assets/img/movies/hp-01.jpg", "Harry Potter and the Philosopher's Stone", '2001', "Chris Columbus");
             $objMovie02 = new hpMovie ("./src/assets/img/movies/hp-02.jpg", "Harry Potter and the Chamber of Secrets", '2002', "Chris Columbus");
-            $objMovie03 = new hpMovie ("./src/assets/img/movies/hp-03.jpeg", "Harry Potter and the Prisoner of Azkaban", '2004', "Alfonso Cuarón");
+            $objMovie03 = new hpMovie ("./src/assets/img/movies/hp-03.jpg", "Harry Potter and the Prisoner of Azkaban", '2004', "Alfonso Cuarón");
             $objMovie04 = new hpMovie ("./src/assets/img/movies/hp-04.jpg", "Harry Potter and the Goblet of Fire", '2005', "Mike Newell");
             $objMovie05 = new hpMovie ("./src/assets/img/movies/hp-05.jpg", "Harry Potter and the Order of the Phoenix", '2007', "David Yates");
             $objMovie06 = new hpMovie ("./src/assets/img/movies/hp-06.jpg", "Harry Potter and the Half-Blood Prince", '2009', "David Yates");
@@ -122,7 +122,7 @@
          
             foreach($moviesArray as $elements){
             ?>
-                <div id="eg" class="card_container">
+                <div id="card_movies" class="card_container">
                     <img class="card_image" src=<?php echo $elements->movieImage();?> alt=<?php echo $elements->movieTitle();?>>
                     <h1 class="card_title"><?php echo $elements->movieTitle(); ?></h1>
                     <div class="card_year">
