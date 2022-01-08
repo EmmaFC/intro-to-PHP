@@ -42,135 +42,97 @@
                 <option value="Cat">Cat</option>
                 <option value="Spider">Spider</option>
             </select>
-            <input class="inp_btn" type="submit" value="Submit">
+            <input name="submit_form" class="inp_btn" type="submit" value="Submit">
         </form>
     </section>
     <section id="users_information">
-        <?php
-            $newUser = array ("Name" => $_POST['name'], "House" => $_POST['house'], "Pet" => $_POST['pet']);
-        ?>
+        
+            <?php 
+                if (!isset($_POST["submit_form"])) {
+                    $newUser = array("Name" => '', "House" => '', "Pet" => '');
+                }
+                if (isset($_POST["submit_form"])) {
+                    $newUser = array("Name" => $_POST['name'], "House" => $_POST['house'], "Pet" => $_POST['pet']);
+                }
+            ?>
+
          <p class="title_table">Your information</p>
         <table id="user_data">
-        
             <tr>
                 <?php 
-                    foreach ($_POST as $keyElement => $valueElement) {
-                        echo "<th>".$keyElement;
-                    }  
+                     foreach ($newUser as $keyElement => $valueElement) {            
+                        echo "<th>".$keyElement."</th>";
+                     }
                 ?>         
             </tr>  
             <tr>
                 <?php 
-                    foreach ($_POST as $keyElement => $valueElement) {
-                        echo "<th>".$valueElement."</th>";    
+                    foreach ($newUser as $keyElement => $valueElement) {
+                        echo "<th>".$valueElement."</th>";
                     }
                 ?>
             </tr>
         </table>
     </section>
     <section id="HP_movie_list">
+
         <?php 
             class hpMovie {
+                public $movieImage;
                 public $movieTitle;
                 public $movieYear;
                 public $movieDirector;
 
-                public function __construct($movieTitle, $movieYear, $movieDirector)
+                public function __construct($movieImage, $movieTitle, $movieYear, $movieDirector)
                 {
-                  $this->movieTitle = $movieTitle;
-                  $this->movieYear = $movieYear;
-                  $this->movieDirector = $movieDirector;
+                    $this->movieImage = $movieImage;
+                    $this->movieTitle = $movieTitle;
+                    $this->movieYear = $movieYear;
+                    $this->movieDirector = $movieDirector;
                 }
-
+                public function movieImage()
+                {
+                  return $this->movieImage;
+                }
                 public function movieTitle()
                 {
                   return $this->movieTitle;
                 }
-               
                 public function movieYear()
                 {
                   return $this->movieYear;
                 }
-               
                 public function movieDirector()
                 {
                   return $this->movieDirector;
                 }
             }
 
-            $objMovie01 = new hpMovie ("Harry Potter and the Philosopher's Stone", '2001', "Chris Columbus");
-            $objMovie02 = new hpMovie ("Harry Potter and the Chamber of Secrets", '2002', "Chris Columbus");
-            $objMovie03 = new hpMovie ("Harry Potter and the Prisoner of Azkaban", '2004', "Alfonso Cuarón");
-            $objMovie04 = new hpMovie ("Harry Potter and the Goblet of Fire", '2005', "Mike Newell");
-            $objMovie05 = new hpMovie ("Harry Potter and the Order of the Phoenix", '2007', "David Yates");
-            $objMovie06 = new hpMovie ("Harry Potter and the Half-Blood Prince", '2009', "David Yates");
-            $objMovie07 = new hpMovie ("Harry Potter and the Deathly Hallows Part 1", '2010', "David Yates");
-            $objMovie08 = new hpMovie ("Harry Potter and the Deathly Hallows Part 2", '2011', "David Yates");
-        ?>
-        <div id="ft" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-01.jpg" alt=<?php echo $objMovie01->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie01->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie01->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie01->movieYear(); ?></p>
-            </div>
-        </div>
-        <div id="sd" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-02.jpg" alt=<?php echo $objMovie02->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie02->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie02->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie02->movieYear(); ?></p>
-            </div>
-        </div>
-        <div id="tr" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-03.jpeg" alt=<?php echo $objMovie03->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie03->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie03->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie03->movieYear(); ?></p>
-            </div>
-        </div>
-        <div id="fr" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-04.jpg" alt=<?php echo $objMovie04->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie04->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie04->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie04->movieYear(); ?></p>
-            </div>
-        </div>
-        <div id="ft" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-05.jpg" alt=<?php echo $objMovie05->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie05->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie05->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie05->movieYear(); ?></p>
-            </div>
-        </div>
-        <div id="st" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-06.jpg" alt=<?php echo $objMovie06->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie06->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie06->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie06->movieYear(); ?></p>
-            </div>
-        </div>
-        <div id="sv" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-07.jpg" alt=<?php echo $objMovie07->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie07->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie07->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie07->movieYear(); ?></p>
-            </div>
-        </div>    
-        <div id="eg" class="card_container">
-            <img class="card_image" src="./src/assets/img/movies/hp-08.jpg" alt=<?php echo $objMovie08->movieTitle()?>>
-            <h1 class="card_title"><?php echo $objMovie08->movieTitle(); ?></h1>
-            <div class="card_year">
-                <p class="card_director"><?php echo $objMovie08->movieDirector(); ?></p>
-                <p class="card_year"><?php echo $objMovie08->movieYear(); ?></p>
-            </div>
-        </div>
+            $objMovie01 = new hpMovie ("./src/assets/img/movies/hp-01.jpg", "Harry Potter and the Philosopher's Stone", '2001', "Chris Columbus");
+            $objMovie02 = new hpMovie ("./src/assets/img/movies/hp-02.jpg", "Harry Potter and the Chamber of Secrets", '2002', "Chris Columbus");
+            $objMovie03 = new hpMovie ("./src/assets/img/movies/hp-03.jpeg", "Harry Potter and the Prisoner of Azkaban", '2004', "Alfonso Cuarón");
+            $objMovie04 = new hpMovie ("./src/assets/img/movies/hp-04.jpg", "Harry Potter and the Goblet of Fire", '2005', "Mike Newell");
+            $objMovie05 = new hpMovie ("./src/assets/img/movies/hp-05.jpg", "Harry Potter and the Order of the Phoenix", '2007', "David Yates");
+            $objMovie06 = new hpMovie ("./src/assets/img/movies/hp-06.jpg", "Harry Potter and the Half-Blood Prince", '2009', "David Yates");
+            $objMovie07 = new hpMovie ("./src/assets/img/movies/hp-07.jpg", "Harry Potter and the Deathly Hallows Part 1", '2010', "David Yates");
+            $objMovie08 = new hpMovie ("./src/assets/img/movies/hp-08.jpg", "Harry Potter and the Deathly Hallows Part 2", '2011', "David Yates");
+
+            $moviesArray= [];
+            array_push($moviesArray, ($objMovie01),($objMovie02),($objMovie03),($objMovie04),($objMovie05),($objMovie06),($objMovie07),($objMovie08));
+         
+            foreach($moviesArray as $elements){
+            ?>
+                <div id="eg" class="card_container">
+                    <img class="card_image" src=<?php echo $elements->movieImage();?> alt=<?php echo $elements->movieTitle();?>>
+                    <h1 class="card_title"><?php echo $elements->movieTitle(); ?></h1>
+                    <div class="card_year">
+                        <p class="card_director"><?php echo $elements->movieDirector(); ?></p>
+                        <p class="card_year"><?php echo $elements->movieYear(); ?></p>
+                    </div>
+                </div>
+            <?php
+            }
+            ?>
     </section>
     <footer>
         <p>Copyrigth &copy;</p>
